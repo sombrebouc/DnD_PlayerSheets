@@ -1,0 +1,13 @@
+@import './theme/tailwind.css';
+
+/* Après vos imports Tailwind */
+
+/* Réinitialisation des styles Ionic qui pourraient entrer en conflit */
+ion-content {
+    --background: transparent;
+  }
+  
+  /* Permettre aux classes Tailwind de prévaloir sur les styles Ionic */
+  .ion-content-scroll-host {
+    background: inherit;
+  }

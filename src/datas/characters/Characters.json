@@ -1,0 +1,18 @@
+{
+    "characters": [
+      { 
+        "id": 1, 
+        "name": "Arya Thunderheart", 
+        "class": "Guerrier", 
+        "level": 3, 
+        "race": "Demi-Elfe" 
+      },
+      { 
+        "id": 2, 
+        "name": "Eldrin Stormwind", 
+        "class": "Magicien", 
+        "level": 2, 
+        "race": "Elfe" 
+      }
+    ]
+}

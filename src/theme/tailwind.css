@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gestion des conflits avec les styles Ionic */
+:root {
+  --ion-color-primary: theme('colors.green.500');
+  /* Vous pouvez personnaliser d'autres variables Ionic ici */
+}
+
+/* Exemple d'utilisation des couches Tailwind avec Ionic */
+@layer components {
+  .ion-page {
+    @apply bg-zinc-500 dark:bg-gray-900;
+  }
+  
+  ion-content {
+    @apply text-gray-900 dark:text-white;
+  }
+}
