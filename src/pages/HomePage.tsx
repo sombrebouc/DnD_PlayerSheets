@@ -72,45 +72,44 @@ const LoginPage: React.FC = () => {
 
   return (
     // La classe bg-gray-100 applique un fond gris clair à toute la page
-    <IonPage className="bg-zinc-700">
+    <IonPage>
       {/* Le header utilise des classes pour le rendre plus distinctif */}
-      <IonHeader className="shadow-md">
-        <IonToolbar className="px-4">
-          <IonTitle className="text-2xl bg-zinc-700 font-extrabold text-gray-100">
+      <IonHeader>
+        <IonToolbar>
+          <IonTitle>
             Mes Personnages
           </IonTitle>
           <IonButton 
             slot="end" 
             fill="clear" 
-            className="hover:bg-gray-100 rounded-full transition-colors duration-200"
             onClick={handleAddCharacter}
           >
-            <IonIcon icon={add} className="text-green-500 w-6 h-6" />
+            <IonIcon icon={add} />
           </IonButton>
         </IonToolbar>
       </IonHeader>
 
       {/* Le contenu principal avec padding et espacement */}
-      <IonContent className="px-4 py-6">
+      <IonContent >
         {characters.length > 0 ? (
-          <IonList className="bg-transparent">
+          <IonList >
             {characters.map((character) => (
               <IonItemSliding key={character.id}>
                 {/* Chaque carte de personnage avec des effets de survol et ombres */}
-                <IonItem className="my-3 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 bg-white overflow-hidden">
-                  <IonAvatar slot="start" className="bg-gray-100 p-2">
+                <IonItem >
+                  <IonAvatar slot="start" >
                     <IonIcon 
                       icon={person} 
-                      className="w-8 h-8 text-gray-600"
+                      className="w-8 h-8"
                     />
                   </IonAvatar>
                   
                   {/* Information du personnage avec typographie stylisée */}
-                  <IonLabel className="py-4">
-                    <h2 className="text-lg font-semibold text-gray-800">
+                  <IonLabel >
+                    <h2>
                       {character.name}
                     </h2>
-                    <p className="text-gray-600 text-sm mt-1">
+                    <p>
                       {character.race} {character.class} - Niveau {character.level}
                     </p>
                   </IonLabel>
@@ -119,10 +118,9 @@ const LoginPage: React.FC = () => {
                   <IonButton 
                     fill="clear" 
                     slot="end"
-                    className="hover:bg-blue-50 rounded-full transition-colors duration-200"
                     onClick={() => history.push(`/character/${character.id}`)}
                   >
-                    <IonIcon icon={settings} className="text-blue-500 w-5 h-5" />
+                    <IonIcon icon={settings} />
                   </IonButton>
                 </IonItem>
 
@@ -130,7 +128,6 @@ const LoginPage: React.FC = () => {
                 <IonItemOptions side="end">
                   <IonItemOption 
                     color="danger" 
-                    className="bg-red-500 hover:bg-red-600 transition-colors duration-200"
                     onClick={() => handleDeleteCharacter(character.id)}
                   >
                     <IonIcon slot="icon-only" icon={trash} className="w-5 h-5" />
@@ -141,7 +138,7 @@ const LoginPage: React.FC = () => {
           </IonList>
         ) : (
           // État vide stylisé
-          <div className="flex flex-col items-center justify-center h-full text-center px-4">
+          <div>
 
           </div>
         )}
